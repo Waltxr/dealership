@@ -4,11 +4,8 @@ class Car < ApplicationRecord
   validates_presence_of :make
   validates_presence_of :price
 
-  def new?
-    return self.new
-  end
-
   def used?
-    return !self.new
+    !new?
   end
+  
 end

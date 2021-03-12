@@ -10,6 +10,6 @@ dealerships = Dealership.create([{name: 'NYC'}, {name: 'DC'}, {name: 'Philly'}, 
 
 cars = Car.create([{make: 'honda', new: false, price: 2000.00, dealership_ids: [1,2]}, {make: 'toyota', new: false, price: 4000.00, dealership_ids: [1,2,4]}, {make: 'chevy', new: true, price: 1000.00, dealership_ids: [2]}, {make: 'ford', new: true, price: 8000.00, dealership_ids: [1]}])
 
-user = User.create(email: 'user@test.com', password: 'foobar', password_confirmation: 'foobar')
+user = User.create(email: 'user@example.com', password: 'foobar', password_confirmation: 'foobar')
 
-admin = User.create(email: 'admin@test.com', password: 'foobar', password_confirmation: 'foobar', user_type: 1)
+admin = User.create(email: 'admin@example.com', password: 'foobar', password_confirmation: 'foobar', user_type: 1)

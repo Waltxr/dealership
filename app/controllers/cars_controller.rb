@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :auth_admin, only: [:show, :new, :create, :destory]
+  before_action :auth_admin, only: [:new, :create, :destory]
 
   def index
     @cars = Car.all
@@ -22,14 +22,6 @@ class CarsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  # def edit
-  #
-  # end
-  #
-  # def update
-  #
-  # end
 
   def destroy
     @car = Car.find(params[:id])

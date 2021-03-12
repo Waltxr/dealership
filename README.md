@@ -15,18 +15,18 @@ cd dealership
 bundle install
 ```
 
-## Serve
+### Setup DB
 
 ```shell
-rails s
+bundle exec rails db:setup
 ```
 
-## Setup DB
+### Serve
 
 ```shell
-rails db:setup
+bundle exec rails s
 ```
 
-### Admin View and User Views
+### Admin and User creds
 
-#### admin@test.com:foobar, user@test.com:foobar
+#### admin@example.com:foobar, user@example.com:foobar

@@ -18,11 +18,7 @@
       <% @cars.each do |car|  %>
         <tr>
           <td>
-            <% if current_user.admin? %>
-              <%= link_to car.make, car %>
-            <% else %>
-              <%= car.make %>
-            <% end %>
+            <%= link_to car.make, car %>
           </td>
           <td>
             <% if car.new? %>

@@ -7,5 +7,7 @@
   <% if @car.used? %>
     <p>used</p>
   <% end %>
-  <%= link_to 'Delete Car', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if current_user.admin? %>
+    <%= link_to 'Delete Car', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>
