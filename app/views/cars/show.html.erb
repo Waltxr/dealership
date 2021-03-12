@@ -1,0 +1,11 @@
+<div>
+  <h2><%= @car.make %></h2>
+  <p><%= number_to_currency(@car.price) %></p>
+  <% if @car.new? %>
+    <p>new</p>
+  <% end %>
+  <% if @car.used? %>
+    <p>used</p>
+  <% end %>
+  <%= link_to 'Delete Car', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

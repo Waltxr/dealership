@@ -1,0 +1,47 @@
+<div>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <p>Dealership Managemnet</p>
+   <%= current_user.email %>
+   <% if current_user.admin? %><br>
+     <%= link_to 'add new car', new_car_path %>
+   <% end %>
+
+   <table class="table">
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Condition</th>
+      <th>Price</th>
+      <th>Locations</th>
+    </tr>
+    <tbody>
+      <% @cars.each do |car|  %>
+        <tr>
+          <td>
+            <% if current_user.admin? %>
+              <%= link_to car.make, car %>
+            <% else %>
+              <%= car.make %>
+            <% end %>
+          </td>
+          <td>
+            <% if car.new? %>
+              new
+            <% end %>
+            <% if car.used? %>
+              used
+            <% end %>
+          </td>
+          <td>
+            <%= number_to_currency(car.price) %>
+          </td>
+          <td>
+            <% car.dealerships.each do |dealership| %>
+              <%= dealership.name + ', ' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </thead>
+</div>

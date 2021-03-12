@@ -1,0 +1,29 @@
+<h3>Add Car</h3>
+<%= form_with(model: @car, local: true) do |form| %>
+  <div>
+    <%= form.text_field :make, placeholder: "make", required: true %>
+    <% @car.errors.full_messages_for(:make).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.text_field :price, placeholder: "price", required: true %>
+    <% @car.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.collection_check_boxes :dealership_ids, Dealership.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label "New?" %>
+    <%= form.check_box :new %> <br />
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
